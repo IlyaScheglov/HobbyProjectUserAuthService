@@ -1,0 +1,1 @@
+alter table keys drop column key_text;

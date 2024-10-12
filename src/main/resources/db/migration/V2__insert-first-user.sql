@@ -1,0 +1,2 @@
+insert into users(id, login, password)
+    values ('f6f14bc0-2e66-4f99-9ffc-aadd3348a7fe', 'ilyxa', '$argon2i$v=19$m=65536,t=22,p=1$oQkaUjg43zKmTy3eb1stPw$7S6756uXVBKQK6ER9w/o6jZo4oHV4Keo8yYZZEm20jU');

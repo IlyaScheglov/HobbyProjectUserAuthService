@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: UserAuthService
+  transaction:
+    default-timeout: 5
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/userauthservice
+    username: postgres
+    password: admin759
+
+jwt:
+  redis:
+    enabled: true
+    host: localhost
+    port: 6379
+    ttl: 5m
+  lifetime: 7d
+  secret: secret
+server:
+  port: 8084
