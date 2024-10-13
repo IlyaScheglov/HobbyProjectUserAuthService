@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.SecretKeyBuilder;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
@@ -17,6 +18,7 @@ import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class JwtService {
 
     @Value("${jwt.lifetime}")
@@ -39,6 +41,7 @@ public class JwtService {
     }
 
     public UUID getIdFromToken(String token) {
+        log.info("JWT: " + token);
         try {
             SecretKeySpec secretKey = new SecretKeySpec(jwtSecret.getBytes("UTF-8"), "HmacSHA256");
             return Jwts.parser()
